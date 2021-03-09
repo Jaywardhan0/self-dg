@@ -11,7 +11,6 @@ var bad;
 var bad1;
 var PLAY = 1
 var END = 0
-var play;
 var gameState = PLAY;
 function preload(){
 good = loadImage("Good.png")
@@ -23,7 +22,6 @@ bad1 = loadImage("bad1.png")
 }
 function setup(){
     createCanvas(500,500)
-    play= createSprite(250,50,30,10)
     Player= createSprite(250,250,20,20)
     Player.addImage(good)
     Player.scale = 0.12
@@ -47,16 +45,7 @@ function draw(){
             Enemy2();
             Enemy3();
             text("For better experience don't longpress spacebar",100,0)
-            touches = [];
 
-    }
-          
-        if(mousePressedOver(play)||touches.length > 0){
-            zombie();
-            Enemy();
-            Enemy2();
-            Enemy3();
-            text("For better experience don't longpress spacebar",100,0)
     }
     if (Zombiegroup.isTouching(Player)){
         gameState= END
